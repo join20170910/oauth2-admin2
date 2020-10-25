@@ -19,6 +19,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
     //配置 客户端 用户及密码  使用内存模式
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
@@ -27,7 +29,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 //client_id
                 .withClient("client")
                 //client_secret
-                .secret("secret")
+                .secret(bCryptPasswordEncoder.encode("secret"))
                 //授权类型
                 .authorizedGrantTypes("authorization_code")
                 //授权范围
