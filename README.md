@@ -29,7 +29,7 @@ redirectUris：注册回调地址
 
 客户端授权认证 url 
 1 浏览器输入 url
-http://localhost:8080/oauth/authorize?client_id=client&response_type=code
+http://localhost:8080/oauth/authorize?client_id=admin&response_type=code
 2 在  输入 账号密码 成功后 在返回  授权码
 浏览器地址上还会包含一个授权码（code=1JuO6V）
 

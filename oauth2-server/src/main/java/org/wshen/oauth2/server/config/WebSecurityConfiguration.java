@@ -21,5 +21,18 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+        auth.inMemoryAuthentication()
+                .withUser("user").password(passwordEncoder().encode("123456")).roles("USER")
+                .and()
+                .withUser("admin").password(passwordEncoder().encode("123456")).roles("ADMIN");
+
+    }
 }
