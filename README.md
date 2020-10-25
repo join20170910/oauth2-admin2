@@ -34,3 +34,35 @@ http://localhost:8080/oauth/authorize?client_id=admin&response_type=code
 浏览器地址上还会包含一个授权码（code=1JuO6V）
 
 通过授权码向服务器申请令牌
+
+
+
+功能 实现
+
+JDBC 存储令牌
+ client 存到数据库
+ Token 存到数据库
+ 
+ 实现账号信息存储到数据
+ 
+ 创建资源服务， 实现统一资源认证功能
+  
+ 统一资源认证流程
+  
+  客户端授权认证，获取 [code=L7UIVN]授权码 ：
+   浏览器访问: http://localhost:8080/oauth/authorize?client_id=admin&response_type=code
+  postman 工具 ：通过授权码获取 token 
+  a、http://admin:123456@localhost:8080/oauth/token
+  返回["access_token": "110cf184-2874-41f0-968b-6ee8e6478cf0",]
+  
+  b、localhost:8080/oauth/token  
+    表 oauth_client_details 对应的字段 client_id client_secret
+      Authorization ->Basic Auth  username:client_id  password client_secret
+  
+  返回具体资源：
+  http://localhost:8081/contents/?access_token=110cf184-2874-41f0-968b-6ee8e6478cf0
+  
+   
+ 
+ 
+ 

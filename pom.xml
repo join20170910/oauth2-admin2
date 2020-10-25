@@ -14,11 +14,10 @@
     <artifactId>oauth2-admin</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-
     <modules>
         <module>oauth2-server</module>
+        <module>contentresource-server</module>
     </modules>
-
     <properties>
         <skipTests>true</skipTests>
         <java.version>1.8</java.version>
@@ -28,7 +27,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
     </properties>
-
     <licenses>
         <license>
             <name>Apache 2.0</name>
@@ -43,7 +41,15 @@
             <email>wyj8574@163.com.com</email>
         </developer>
     </developers>
+<dependencies>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.16.18</version>
+        <scope>provided</scope>
+    </dependency>
 
+</dependencies>
     <dependencyManagement>
         <dependencies>
             <dependency>

@@ -2,6 +2,7 @@ package org.wshen.oauth2.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @ClassName oauth2Application
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  **/
 
 @SpringBootApplication
+@MapperScan(basePackages = "org.wshen.oauth2.server.mapper")
 public class oauth2Application {
     public static void main(String[] args) {
         SpringApplication.run(oauth2Application.class,args);

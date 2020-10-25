@@ -4,7 +4,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jdbc-url: jdbc:mysql://47.105.193.166:3306/merchant?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    jdbc-url: jdbc:mysql://47.105.193.166:3306/oauth2-admin?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: merchant_dev
     password: myuser_dev@163_M
     hikari:
@@ -19,3 +19,6 @@ spring:
 
 server:
   port: 8080
+mybatis:
+  type-aliases-package: com.
+  mapper-locations: classpath:mapper/*.xml

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="oauth2-server" />
+        <module name="ContentResource-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -15,6 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ContentResource-server" options="-parameters" />
       <module name="oauth2-dependencies" options="-parameters" />
       <module name="oauth2-server" options="-parameters" />
     </option>
