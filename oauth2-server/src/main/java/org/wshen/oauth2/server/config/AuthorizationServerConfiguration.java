@@ -27,9 +27,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         //使用内存设置
         clients.inMemory()
                 //client_id
-                .withClient("client")
+                .withClient("admin")
                 //client_secret
-                .secret(bCryptPasswordEncoder.encode("secret"))
+                .secret(bCryptPasswordEncoder.encode("123456"))
                 //授权类型
                 .authorizedGrantTypes("authorization_code")
                 //授权范围
